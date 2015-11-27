@@ -6,3 +6,34 @@
   tags:
     - mosquitto
 
+- name: install package
+  yum: name=mosquitto state=present
+  tags:
+    - mosquitto
+
+- name: write general configuration
+  template: src=general.conf.j2 dest=/etc/mosquitto/conf.d/general.conf
+  notify:
+    - restart mosquitto
+  tags:
+    - mosquitto
+
+- name: write persistence configuration
+  template: src=persistence.conf.j2 dest=/etc/mosquitto/conf.d/persistence.conf
+  notify:
+    - restart mosquitto
+  tags:
+    - mosquitto
+
+- name: write logging configuration
+  template: src=logging.conf.j2 dest=/etc/mosquitto/conf.d/logging.conf
+  notify:
+    - restart mosquitto
+  tags:
+    - mosquitto
+
+- name: setup as startup service
+  service: name=mosquitto state=started enabled=yes
+  tags:
+    - mosquitto
+
