@@ -1,0 +1,6 @@
+{% if mosquitto_logging.destination is defined %}
+log_dest {{ mosquitto_logging.destination }}
+{% endif %}
+{% if mosquitto_logging.connection_messages is defined %}
+connection_messages {% if mosquitto_logging.connection_messages %}true{% else %}false{% endif %}
+{% endif %}
