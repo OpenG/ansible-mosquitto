@@ -1,0 +1,8 @@
+---
+- name: add repository
+  get_url:
+    url: "http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6/home:oojah:mqtt.repo"
+    dest: /etc/yum.repos.d/mosquitto.repo
+  tags:
+    - mosquitto
+
