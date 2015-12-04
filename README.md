@@ -2,6 +2,15 @@
 
 Installs and configures Mosquitto MQTT Broker.
 
+# Configuration Options
+
+Name                                   | Description
+---------------------------------------|------------------------------------------------------------------------------
+mosquitto_logging.connection_messages  | Log when clients connect and/or disconnect
+mosquitto_logging.destination          | Log message destination
+mosquitto_persistence                  | Write connection, subscription and message data to the disk
+mosquitto_persistent_client_expiration | Remove persistent clients if they do not reconnect within a certain time frame
+
 # Usage example
 
 ```yaml
@@ -21,4 +30,3 @@ Installs and configures Mosquitto MQTT Broker.
 # License
 
 [![GPLv3](http://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.html)
-
